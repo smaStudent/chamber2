@@ -1,0 +1,72 @@
+##########################################
+###############  Commands  ###############
+##########################################
+ROM?                    Monitors ROM version.
+SRQ?                    Monitors SRQ status.
+MASK?                   Monitors the SRQ mask setting.
+ALARM?                  Monitors alarms that have occurred.
+KEYPROTECT?             Monitors key lock status.
+TYPE?                   Monitors cabinet (oven) information.
+MODE?                   Monitors cabinet (oven) operating mode.
+MON?                    Monitors conditions inside the cabinet (oven).
+TEMP?                   Monitors temperature parameters for the constant mode.
+HUMI?                   Monitors humidity parameters for the constant mode.
+SET?                    Monitors refrigerator capacity control setup.
+REF?                    Monitors refrigerator output.
+%?                      Monitors heater output.
+PRGM MON?               Monitors run status of the current program.
+PRGM DATA?              Monitors setup of the program data.
+RUN PRGM MON?           Monitors run status of the current remote program.
+RUN PRGM?               Monitors setup of the program run from remote.
+
+
+##########################################
+###########  Setting commands  ###########
+##########################################
+MASK                    Sets the SRQ status mask.
+SRQ                     Clears SRQ status.
+PRGM ERASE              Deletes programs.
+KEYPROTECT              Locks/Unlocks keys.
+POWER                   Turns control power ON/OFF.
+TEMP                    Sets temperature.
+HUMI                    Sets humidity.
+SET                     Sets refrigerator capacity control.
+PRGM                    Controls the current program.
+MODE                    Sets operating mode.
+PRGM DATA WRITE         Edits program data.
+RUN PRGM                Creates and starts remote programs.
+
+
+
+##########################################  It is always NA: and then one of those
+################# Errors #################  errors
+##########################################
+
+
+
+
+COMMAND ERR             Cabinet (Oven) could not recognize the command data. • When "TENMP?" is sent as thecommand. The correct command is "TEMP?".
+ADDR ERR                Address error • When an address is attached to a command which cannot be expressed with an address
+CONTROLLER NOT READY-1  The cabinet (oven) could not execute the command. • When a humidity command is sent to a cabinet (oven) which does not support humidity control
+CONTROLLER NOT READY-2  The cabinet (oven) could not execute the command. • When a program related command is sent to a cabinet (oven) when a program was not running
+CONTROLLER NOT READY-3  The cabinet (oven) could not execute the command. • When the user attempts to lock keys when power is OFF
+CONTROLLER NOT READY-4  The cabinet (oven) could not execute the command. • When the user attempts to change a time signal setting which cannot be changed
+CONTROLLER NOT READY-5  The cabinet (oven) could not execute the command. • When a refrigerator command is sent to a cabinet (oven) without a refrigerator
+CONTROLLER NOT READY-6  The cabinet (oven) could not execute the command. • When a damper command is sent to a cabinet (oven) without a damper
+DATA NOT READY          The requested data cannot be found. • When the user attempts to run a program which is not set up
+PARAMETER ERR           Parameter error • The parameter is missing in the command. • When the attached parameter can not be recognized.
+DATA OUT OF RANGE       Data is out of the specified range. • When the user sets the target temperature beyond either the temperature high or low alarm
+PROTECT ON              Settings are protected against change by the protect feature. • When the user attempts to change settings when protection is ON
+PRGM WRITE ERR-1        Program editing error • When the user attempts to write data without specifying the new program/overwrite mode
+PRGM WRITE ERR-2        Program editing error • When an edit command is sent while not in the edit mode
+PRGM WRITE ERR-3        Program editing error • When data is overwritten while the cabinet (oven) is editing data
+PRGM WRITE ERR-4        Program editing error • When data is edited while the cabinet (oven) is overwriting data
+PRGM WRITE ERR-5        Program editing error • When an overwrite command is sent while not in the overwrite mode
+PRGM WRITE ERR-6        Program editing error • When a program different from that where now writing data is specified
+PRGM WRITE ERR-7        Program editing error • When a step No. is skipped or out-of-sequence
+PRGM WRITE ERR-8        Program editing error • When counter setup is wrong
+PRGM WRITE ERR-9        Program editing error • When the user attempts to change a program while that program is running
+PRGM WRITE ERR-10       Program editing error • When the user attempts to set the repeat counter or end mode without first inputting the necessary settings
+PRGM WRITE ERR-11       Program editing error • When the user inputs invalid data
+PRGM WRITE ERR-12       Program editing error • When the user sets exposure time when ramp control is ON
+PRGM WRITE ERR-13       Program editing error • When the user turns humidity ramp control ON when humidity control is OFF
