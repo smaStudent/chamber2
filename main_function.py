@@ -40,8 +40,8 @@ def main():
             if amountOfData == 100:                         # check if we already have 100 piece of data in each tables
                 #here we have to add this to the MySQL
                 try:
-                    saveSomeDataToMySQL('mysql01.saxon.beep.pl', 'sub_saxon', 'passwd', 'test_database', 'chamberTemp', tempData)
-                    saveSomeDataToMySQL('mysql01.saxon.beep.pl', 'sub_saxon', 'passwd', 'test_database', 'chamberHumi', humiData)
+                    saveSomeDataToMySQL( 'chamberTemp', tempData)
+                    saveSomeDataToMySQL(, humiData)
                     saveObjectToFile("tempData.txt", tempData)
                     saveObjectToFile("HumiData.txt", humiData)
                     print("Adding corectly to MySQl database")
