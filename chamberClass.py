@@ -55,6 +55,7 @@ class Chamber:
     def update(self):
         period = datetime.datetime.now()
         if period.second % self.periodOfRead == 0:
+            self.timeInIteration = period
             time.sleep(1)
             try:
                 self.tempData()
