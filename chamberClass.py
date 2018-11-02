@@ -61,6 +61,8 @@ class Chamber:
                 return True
             except:
                 return serial.SerialException
+        else:
+            return False
 
     ####################################
     ######### helpful function #########
