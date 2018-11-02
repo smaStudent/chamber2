@@ -40,7 +40,10 @@ def main():
                 tempData = dataStruct(chamber.getTemp())
                 humiData = dataStruct(chamber.getHumi())
                 amountOfData += 1
+        except:
+            print("Unable to update the chamber")
 
+        try:
             if amountOfData == 5:
                 for i in tempData:
                     try:
@@ -69,7 +72,7 @@ def main():
                 amountOfData = 0
                 # if we would like to, we can add data also to the file and have local history
         except:
-            print("Unable to update chamber or there is a problem with saving it in the MySQL!")
+            print("Unable to save data in the MySQL server!")
 
 
 if __name__ == '__main__':
