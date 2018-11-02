@@ -58,8 +58,11 @@ class Chamber:
             try:
                 self.tempData()
                 self.humiData()
+                return True
             except:
                 return serial.SerialException
+        else:
+            return False
 
     ####################################
     ######### helpful function #########
