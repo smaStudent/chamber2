@@ -96,6 +96,7 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
                     "INSERT INTO "+table+" (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
             connection.commit()
+            print("udaloSie", end=" ")
         except:
             print("Unable to add data to the MySQl server, try again!")
             return mysql.DatabaseError
