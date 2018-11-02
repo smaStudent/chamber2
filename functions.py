@@ -118,9 +118,11 @@ def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
 
         try:
             with connection.cursor() as cursor:
+                print("1.1")
                 cursor.execute(
                     "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
+                print("1.2")
             connection.commit()
             print("udaloSieSQL")
         except:
@@ -142,9 +144,11 @@ def saveSomeDataToMySQLHumi(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
 
         try:
             with connection.cursor() as cursor:
+                print("2.1")
                 cursor.execute(
                     "INSERT INTO chamberHumi (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
+                print("2.2")
             connection.commit()
             print("udaloSieSQL")
         except:
