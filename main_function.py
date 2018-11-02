@@ -3,7 +3,7 @@ from dataStruct import dataStruct
 import time
 from functions import *
 import time
-#import pymysql as mysql
+# import pymysql as mysql
 import MySQLdb as mysql
 import serial
 
@@ -49,25 +49,25 @@ def main():
             if amountOfData == 5:
                 for i in tempData:
                     try:
+                        saveSomeDataToMySQLTemp('mysql01.saxon.beep.pl',
+                                                'sub_saxon',
+                                                'passwd',
+                                                'test_database',
+                                                i)
+                        # 'chamberTemp',
+                    except:
+                        i.saveToFile("tempData.txt")
+
+                for i in humiData:
+                    try:
                         saveSomeDataToMySQL('mysql01.saxon.beep.pl',
                                             'sub_saxon',
                                             'passwd',
                                             'test_database',
-                                            'chamberTemp',
+                                            'chamberHumi',
                                             i)
                     except:
-                        i.saveToFile("tempData.txt")
-
-                # for i in humiData:
-                #     try:
-                #         saveSomeDataToMySQL('mysql01.saxon.beep.pl',
-                #                             'sub_saxon',
-                #                             'passwd',
-                #                             'test_database',
-                #                             'chamberHumi',
-                #                             i)
-                #     except:
-                #         i.saveToFile("humiData.txt")
+                        i.saveToFile("humiData.txt")
 
                 tempData = []
                 humiData = []

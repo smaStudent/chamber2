@@ -2,7 +2,9 @@ import time
 import serial
 import datetime
 import MySQLdb as mysql
-#import pymysql as mysql
+
+
+# import pymysql as mysql
 
 
 def sendAndReceive(serialObject, message):
@@ -93,7 +95,32 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
             with connection.cursor() as cursor:
                 print("INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)")
                 cursor.execute(
-                    "INSERT INTO "+table+" (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+                    "INSERT INTO " + table + " (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+                    (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
+            connection.commit()
+            print("udaloSieSQL", end=" ")
+        except:
+            print("Unable to add data to the MySQl server, try again!")
+            return mysql.DatabaseError
+
+        connection.close()
+    except:
+        print("Unable to connect with MySQL! Try again later!")
+        return mysql.DatabaseError
+
+
+def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataTab):
+    try:
+        connection = mysql.connect(host=hostGiven,
+                                   user=userGiven,
+                                   passwd=passwdGiven,
+                                   db=dbGiven)
+
+        try:
+            with connection.cursor() as cursor:
+                print("INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)")
+                cursor.execute(
+                    "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
             connection.commit()
             print("udaloSieSQL", end=" ")
