@@ -3,8 +3,8 @@ from dataStruct import dataStruct
 import time
 from functions import *
 import time
-import pymysql as mysql
-#import MySQLdb as mysql
+#import pymysql as mysql
+import MySQLdb as mysql
 import serial
 
 
