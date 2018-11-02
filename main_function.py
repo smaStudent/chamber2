@@ -56,8 +56,23 @@ def main():
                                         'chamberHumi',
                                         i)
 
+<<<<<<< HEAD
                 tempData = []
                 humiData = []
+=======
+            if amountOfData == 100:                         # check if we already have 100 piece of data in each tables
+                #here we have to add this to the MySQL
+                try:
+                    saveSomeDataToMySQL( 'chamberTemp', tempData)
+                    saveSomeDataToMySQL(, humiData)
+                    saveObjectToFile("tempData.txt", tempData)
+                    saveObjectToFile("HumiData.txt", humiData)
+                    print("Adding corectly to MySQl database")
+                except mysql.err.Error:
+                    saveObjectToFile("tempData.txt", tempData)
+                    saveObjectToFile("HumiData.txt", humiData)
+                    print("Added data just to the files")
+>>>>>>> 6ae28d6f7a81fa8f16e2feb5ff30aa7a12a3e79f
                 amountOfData = 0
                 # if we would like to, we can add data also to the file and have local history
 
