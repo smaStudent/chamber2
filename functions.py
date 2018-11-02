@@ -13,6 +13,7 @@ def sendAndReceive(serialObject, message):
         ans = ans.decode("utf-8")
         return ans
 
+
 def retFloatFromString(givStr):
     retFloat = 0.0
     newFirstStr = str()
@@ -67,9 +68,10 @@ def changeAnsForTable(ans):
 def saveToFile(name, tab):
     file = open(name, "a")
     for i in tab:
-        file.write(str(i)[1:-1]+"\n")
+        file.write(str(i)[1:-1] + "\n")
 
     file.close()
+
 
 def saveObjectToFile(name, tab):
     file = open(name, 'a')
@@ -78,26 +80,23 @@ def saveObjectToFile(name, tab):
 
     file.close()
 
+
 def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataTab):
-    connection = mysql.connect(host=hostGiven,
-                               user=userGiven,
-                               passwd=passwdGiven,
-                               db=dbGiven)
-
     try:
-        with connection.cursor() as cursor:
-            # Create a new record
-            for i in dataTab:
-                cursor.execute("INSERT INTO "+table+" (dateTime, PV, SP, minLevel, maxLevel)"
-                               "VALUES (%s, %f, %f, %f)",
-                               (i.dateTime, i.PV, i.SP, i.minLv, i.maxLv))
+        connection = mysql.connect(host=hostGiven,
+                                   user=userGiven,
+                                   passwd=passwdGiven,
+                                   db=dbGiven)
 
-        # connection is not autocommit by default. So you must commit to save
-        # your changes.
+        try:
+            with connection.cursor() as cursor:
+
+                cursor.execute("INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+                               (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
             connection.commit()
-    except:
-        print("Trouble with sending data to MySQL!!!")
-        # here we can add sth like switching on red LED
-        return mysql.err.Error
-    finally:
+        except:
+            print("Unable to add data to the MySQl server, try again!")
+
         connection.close()
+    except:
+        print("Unable to connect with MySQL! Try again later!")
