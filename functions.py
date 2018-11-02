@@ -1,7 +1,7 @@
 import time
 import serial
 import datetime
-import pymysql as mysql
+import MySQLdb as mysql
 
 
 def sendAndReceive(serialObject, message):
