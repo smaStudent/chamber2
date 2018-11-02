@@ -53,19 +53,17 @@ def main():
                                                 'sub_saxon',
                                                 'passwd',
                                                 'test_database',
-                                                i)
-                        # 'chamberTemp',
+                                                i)  # 'chamberTemp',
                     except:
                         i.saveToFile("tempData.txt")
 
                 for i in humiData:
                     try:
-                        saveSomeDataToMySQL('mysql01.saxon.beep.pl',
-                                            'sub_saxon',
-                                            'passwd',
-                                            'test_database',
-                                            'chamberHumi',
-                                            i)
+                        saveSomeDataToMySQLHumi('mysql01.saxon.beep.pl',
+                                                'sub_saxon',
+                                                'passwd',
+                                                'test_database',
+                                                i)  # 'chamberHumi',
                     except:
                         i.saveToFile("humiData.txt")
 

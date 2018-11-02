@@ -98,7 +98,7 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
                     "INSERT INTO " + table + " (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
             connection.commit()
-            print("udaloSieSQL", end=" ")
+            print("udaloSieSQL")
         except:
             print("Unable to add data to the MySQl server, try again!")
             return mysql.DatabaseError
@@ -109,7 +109,7 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
         return mysql.DatabaseError
 
 
-def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataTab):
+def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj):
     try:
         connection = mysql.connect(host=hostGiven,
                                    user=userGiven,
@@ -118,12 +118,35 @@ def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataTab)
 
         try:
             with connection.cursor() as cursor:
-                print("INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)")
                 cursor.execute(
                     "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
-                    (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
+                    (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
             connection.commit()
-            print("udaloSieSQL", end=" ")
+            print("udaloSieSQL")
+        except:
+            print("Unable to add data to the MySQl server, try again!")
+            return mysql.DatabaseError
+
+        connection.close()
+    except:
+        print("Unable to connect with MySQL! Try again later!")
+        return mysql.DatabaseError
+
+
+def saveSomeDataToMySQLHumi(hostGiven, userGiven, passwdGiven, dbGiven, dataObj):
+    try:
+        connection = mysql.connect(host=hostGiven,
+                                   user=userGiven,
+                                   passwd=passwdGiven,
+                                   db=dbGiven)
+
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(
+                    "INSERT INTO chamberHumi (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+                    (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
+            connection.commit()
+            print("udaloSieSQL")
         except:
             print("Unable to add data to the MySQl server, try again!")
             return mysql.DatabaseError
