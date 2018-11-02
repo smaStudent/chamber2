@@ -35,8 +35,8 @@ def main():
     while areWeWorking:
         try:
             if chamber.update():
-                temptData = dataStruct(chamber.getTemp())
-                humitData = dataStruct(chamber.getHumi())
+                tempData = dataStruct(chamber.getTemp())
+                humiData = dataStruct(chamber.getHumi())
                 amountOfData += 1
 
             if amountOfData == 100:
