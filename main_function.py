@@ -3,8 +3,8 @@ from dataStruct import dataStruct
 import time
 from functions import *
 import time
-#import pymysql as mysql
-import MySQLdb as mysql
+import pymysql as mysql
+#import MySQLdb as mysql
 import serial
 
 
@@ -53,7 +53,7 @@ def main():
                                             'test_database',
                                             'chamberTemp',
                                             i)
-                    except mysql.DatabaseError:
+                    except:
                         i.saveToFile("tempData.txt")
 
                 for i in humiData:
@@ -64,14 +64,14 @@ def main():
                                             'test_database',
                                             'chamberHumi',
                                             i)
-                    except mysql.DatabaseError:
+                    except:
                         i.saveToFile("humiData.txt")
 
                 tempData = []
                 humiData = []
                 amountOfData = 0
                 # if we would like to, we can add data also to the file and have local history
-        except:
+        except mysql.DataError:
             print("Unable to save data in the MySQL server!")
 
 
