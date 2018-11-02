@@ -12,6 +12,7 @@ def main():
     amountOfData = 0
     tempData = []
     humiData = []
+    saveDataInIteration = False
     ##### Try to connect with chamber
     try:
         chamber = Chamber()
@@ -39,7 +40,7 @@ def main():
                 humiData = dataStruct(chamber.getHumi())
                 amountOfData += 1
 
-            if amountOfData == 100:
+            if amountOfData == 5 and not saveDataInInteration:
                 for i in tempData:
                     saveSomeDataToMySQL('mysql01.saxon.beep.pl',
                                         'sub_saxon',
@@ -59,6 +60,7 @@ def main():
                 tempData = []
                 humiData = []
                 amountOfData = 0
+                saveDataInIteration = True
                 # if we would like to, we can add data also to the file and have local history
 
         except:
