@@ -125,3 +125,8 @@ class Chamber:
 #         return sendAndReceive(self.ser, self.humiAsk)
 #     else:
 #         print("Lost connection with chamber")
+
+
+
+
+# 1 
