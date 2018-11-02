@@ -91,7 +91,7 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
 
         try:
             with connection.cursor() as cursor:
-
+                print("INSERT INTO "+table+" (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)")
                 cursor.execute(
                     "INSERT INTO "+table+" (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                     (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
