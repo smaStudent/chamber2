@@ -3,8 +3,8 @@ from dataStruct import dataStruct
 import time
 from functions import *
 import time
-import pymysql as mysql
-#import MySQLdb as mysql
+#import pymysql as mysql
+import MySQLdb as mysql
 import serial
 
 
@@ -37,9 +37,11 @@ def main():
     while areWeWorking:
         try:
             if chamber.update():
-                tempData = dataStruct(chamber.getTemp())
-                humiData = dataStruct(chamber.getHumi())
+                tempttData = dataStruct(chamber.getTemp())
+                humitData = dataStruct(chamber.getHumi())
                 amountOfData += 1
+                tempData.append(tempttData)
+                humiData.append(humitData)
         except:
             print("Unable to update the chamber")
 
