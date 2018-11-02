@@ -91,12 +91,15 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
         try:
             with connection.cursor() as cursor:
 
-                cursor.execute("INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
-                               (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
+                cursor.execute(
+                    "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+                    (dataTab.dateTime, dataTab.PV, dataTab.SP, dataTab.minLv, dataTab.maxLv))
             connection.commit()
         except:
             print("Unable to add data to the MySQl server, try again!")
+            return mysql.DatabaseError
 
         connection.close()
     except:
         print("Unable to connect with MySQL! Try again later!")
+        return mysql.DatabaseError
