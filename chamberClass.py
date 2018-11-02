@@ -55,6 +55,7 @@ class Chamber:
     def update(self):
         period = datetime.datetime.now()
         if period.second % self.periodOfRead == 0:
+            time.sleep(1)
             try:
                 self.tempData()
                 self.humiData()
@@ -92,7 +93,7 @@ class Chamber:
             self.humiDataObject.SP = SP
             self.humiDataObject.minLv = lowVal
             self.humiDataObject.maxLv = maxVal
-            print("TEMP: ", self.humiDataObject)
+            print("HUMI: ", self.humiDataObject)
             return self.humiDataObject
         except serial.SerialException:
             print("Lost connection with chamber")
