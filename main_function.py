@@ -49,14 +49,20 @@ def main():
             if amountOfData == 5:
                 for i in tempData:
                     try:
-                        saveSomeDataToMySQLTemp(
+                        saveSomeDataToMySQLTemp('mysql01.saxon.beep.pl',
+                                                'sub_saxon',
+                                                'passwd',
+                                                'test_database',
                                                 i)  # 'chamberTemp',
                     except:
                         i.saveToFile("tempData.txt")
 
                 for i in humiData:
                     try:
-                        saveSomeDataToMySQLHumi(
+                        saveSomeDataToMySQLHumi('mysql01.saxon.beep.pl',
+                                                'sub_saxon',
+                                                'passwd',
+                                                'test_database',
                                                 i)  # 'chamberHumi',
                     except:
                         i.saveToFile("humiData.txt")
