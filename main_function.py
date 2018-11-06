@@ -21,14 +21,18 @@ def main():
     except:
         while tryCount < 100:
             try:
+                print("1.1")
                 chamber = Chamber()
+                print("1.2")
                 areWeWorking = True
                 tryCount = 0
             except:
                 print("Try again later, this was: " + str(tryCount) +
                       "try. CHECK CABLES AND WE WILL TRY AGAIN IN 10 seconds")
                 areWeWorking = False
+                print("areWeWorking", areWeWorking)
                 tryCount += tryCount
+                print("tryCount",tryCount)
                 time.sleep(10)
     #### end of module which want to connect with chamber
 
