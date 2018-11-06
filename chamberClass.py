@@ -37,13 +37,13 @@ class Chamber:
         self.humiDataObject = dataStruct.dataStruct()
 
 
-        try:
-            self.ser.open()
-            print("We are connected with chamber")
-        except serial.SerialException:
-            # switch red Led for instance
-            print("We couldnt connect with chamber, try again after checking it!")
-            return serial.SerialException
+        # try:
+        #     self.ser.open()
+        #     print("We are connected with chamber")
+        # except serial.SerialException:
+        #     # switch red Led for instance
+        #     print("We couldnt connect with chamber, try again after checking it!")
+        #     return serial.SerialException
 
     def __del__(self):
         self.ser.close()
