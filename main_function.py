@@ -14,12 +14,13 @@ def main():
     amountOfData = 0
     tempData = []
     humiData = []
+    areWeWorking = False
     ##### Try to connect with chamber
     try:
         chamber = Chamber()
         areWeWorking = True
     except:
-        while tryCount < 100:
+        while tryCount < 100 and not areWeWorking:
             try:
                 print("1.1")
                 chamber = Chamber()
