@@ -27,14 +27,12 @@ def main():
                 areWeWorking = True
                 tryCount = 0
             except:
-                if chamber is not None
-                    chamber.__del__()
                 print("Try again later, this was: " + str(tryCount) +
                       "try. CHECK CABLES AND WE WILL TRY AGAIN IN 10 seconds")
                 areWeWorking = False
                 print("areWeWorking", areWeWorking)
                 tryCount += tryCount
-                print("tryCount",tryCount)
+                print("tryCount", tryCount)
                 time.sleep(10)
     #### end of module which want to connect with chamber
 
