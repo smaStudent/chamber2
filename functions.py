@@ -110,6 +110,7 @@ def saveSomeDataToMySQL(hostGiven, userGiven, passwdGiven, dbGiven, table, dataT
 
 
 def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj):
+    deltaTime = datetime.datetime()
     try:
         connection = mysql.connect(host=hostGiven,
                                    user=userGiven,

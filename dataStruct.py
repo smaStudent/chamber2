@@ -1,6 +1,15 @@
 class dataStruct:
     def __init__(self, dateTime=None, PV=None, SP=None, min=None, max=None):
+        # self.dateTime = datetime.datetime.now()
+        # self.dateTime.year = dateTime.year
+        # self.dateTime.month = dateTime.month
+        # self.dateTime.day = dateTime.day
+        # self.dateTime.hour = dateTime.hour
+        # self.dateTime.minute = dateTime.minute
+        # self.dateTime.second = dateTime.second
+        # self.dateTime.microsecond = 0
         self.dateTime = dateTime
+        self.dateTime.microsecond = 0
         self.PV = PV
         self.SP = SP
         self.minLv = min
