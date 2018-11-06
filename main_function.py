@@ -27,7 +27,8 @@ def main():
                 areWeWorking = True
                 tryCount = 0
             except:
-                chamber.__del__()
+                if chamber != None
+                    chamber.__del__()
                 print("Try again later, this was: " + str(tryCount) +
                       "try. CHECK CABLES AND WE WILL TRY AGAIN IN 10 seconds")
                 areWeWorking = False
