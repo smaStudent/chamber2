@@ -57,14 +57,15 @@ def main():
         if amountOfData == 5:
             print("weszlismy do if amountOfData == 5:")
 
+
+            saveSomeDataToMySQLTemp('mysql01.saxon.beep.pl',
+                                    'sub_saxon',
+                                    'passwd',
+                                    'test_database',
+                                    tempData)  # 'chamberTemp'
+
+            print("Udalo sie z MySQL")
             for i in tempData:
-
-                saveSomeDataToMySQLTemp('mysql01.saxon.beep.pl',
-                                        'sub_saxon',
-                                        'passwd',
-                                        'test_database',
-                                        i)  # 'chamberTemp',
-
                 i.saveToFile("tempData.txt")
 
             # for i in humiData:
