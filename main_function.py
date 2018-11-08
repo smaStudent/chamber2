@@ -53,7 +53,7 @@ def main():
                 humiData.append(humitData)
                 print("humiData.append(humitData)                       main")
             else:
-                print("chamber.upadte(), returned false, do nothin'  ")
+                continue
         except:
             print("Unable to update the chamber, main_function")
 
