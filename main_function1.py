@@ -55,6 +55,8 @@ def main():
 
 
         if amountOfData == 5:
+            print("weszlismy do if amountOfData == 5:")
+
             for i in tempData:
 
                 saveSomeDataToMySQLTemp('mysql01.saxon.beep.pl',
