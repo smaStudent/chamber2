@@ -52,10 +52,11 @@ def main():
                 print("tempData.append(tempttData)                      main")
                 humiData.append(humitData)
                 print("humiData.append(humitData)                       main")
-            else:
-                continue
+                print("\n")
+
         except:
             print("Unable to update the chamber, main_function")
+            print("\n")
 
         try:
             if amountOfData == 5:
@@ -83,6 +84,7 @@ def main():
                 humiData = []
                 amountOfData = 0
                 # if we would like to, we can add data also to the file and have local history
+
         except mysql.DataError:
             print("Unable to save data in the MySQL server!")
 
