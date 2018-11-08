@@ -67,14 +67,14 @@ def main():
 
                 i.saveToFile("tempData.txt")
 
-            for i in humiData:
-
-                saveSomeDataToMySQLHumi('mysql01.saxon.beep.pl',
-                                        'sub_saxon',
-                                        'passwd',
-                                        'test_database',
-                                        i)  # 'chamberHumi',
-                i.saveToFile("humiData.txt")
+            # for i in humiData:
+            #
+            #     saveSomeDataToMySQLHumi('mysql01.saxon.beep.pl',
+            #                             'sub_saxon',
+            #                             'passwd',
+            #                             'test_database',
+            #                             i)  # 'chamberHumi',
+            #     i.saveToFile("humiData.txt")
 
             tempData = []
             humiData = []
