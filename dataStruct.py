@@ -9,7 +9,8 @@ class dataStruct:
         # self.dateTime.second = dateTime.second
         # self.dateTime.microsecond = 0
         self.dateTime = dateTime
-        self.dateTime.microsecond = 0
+        if dateTime is not None:
+            self.dateTime.microsecond = 0
         self.PV = PV
         self.SP = SP
         self.minLv = min

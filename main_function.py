@@ -32,7 +32,7 @@ def main():
                       " try. CHECK CABLES AND WE WILL TRY AGAIN IN 10 seconds")
                 areWeWorking = False
                 print("areWeWorking", areWeWorking)
-                tryCount += tryCount
+                tryCount += 1
                 print("tryCount", tryCount)
                 time.sleep(10)
     #### end of module which want to connect with chamber
