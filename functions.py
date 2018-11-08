@@ -167,23 +167,22 @@ def saveSomeDataToMySQLHumi(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
 
 def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj):
 
-    try:
-        connection = mysql.connect(host=hostGiven,
-                                   user=userGiven,
-                                   passwd=passwdGiven,
-                                   db=dbGiven)
+
+    connection = mysql.connect(host=hostGiven,
+                               user=userGiven,
+                               passwd=passwdGiven,
+                               db=dbGiven)
 
 
-        with connection.cursor() as cursor:
-            print("1.1")
-            cursor.execute(
-                "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
-                (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
-            print("1.2")
-        connection.commit()
-        print("udaloSieSQL")
+    with connection.cursor() as cursor:
+        print("1.1")
+        cursor.execute(
+            "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
+            (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
+        print("1.2")
+    connection.commit()
+    print("udaloSieSQL")
 
 
 
-        connection.close()
-   
+    connection.close()
