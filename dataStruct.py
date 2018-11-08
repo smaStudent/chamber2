@@ -10,7 +10,7 @@ class dataStruct:
         # self.dateTime.minute = dateTime.minute
         # self.dateTime.second = dateTime.second
         # self.dateTime.microsecond = 0
-        self.dateTime = datetime.datetime(dateTime.year, dateTime.month, dateTime.day, dateTime.hour, dateTime.minute, dateTime.second)
+        self.dateTime = datetime.datetime(dateTime.year, dateTime.month, dateTime.day, dateTime.hour + 1, dateTime.minute, dateTime.second)
 
         self.PV = PV
         self.SP = SP

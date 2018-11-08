@@ -168,10 +168,7 @@ def saveSomeDataToMySQLHumi(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
 ################################################################################################
 
 def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObjTable):
-    connection = mysql.connect('mysql01.saxon.beep.pl',
-                               'sub_saxon',
-                               'passwd',
-                               'test_database')
+    connection = mysql.connect('mysql01.saxon.beep.pl', 'sub_saxon', 'passwd', 'test_database')
 
     for dataObj in dataObjTable:
         with connection.cursor() as cursor:
@@ -180,4 +177,3 @@ def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObjT
                 (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
             connection.commit()
     connection.close()
-
