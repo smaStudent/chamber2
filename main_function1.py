@@ -45,15 +45,12 @@ def main():
 
         if chamber.update():
             tempttData = dataStruct(chamber.getTemp())
-            print("tempttData = dataStruct(chamber.getTemp()),      main")
             humitData = dataStruct(chamber.getHumi())
-            print("humitData = dataStruct(chamber.getHumi())        main")
             amountOfData += 1
             tempData.append(tempttData)
-            print("tempData.append(tempttData)                      main")
             humiData.append(humitData)
-            print("humiData.append(humitData)                       main")
-            print("\n")
+            print("udalo sie, po raz: ", amountOfData)
+
 
 
 
