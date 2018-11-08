@@ -1,6 +1,7 @@
 import datetime
 class dataStruct:
     def __init__(self, dateTime=None, PV=None, SP=None, min=None, max=None):
+        dateTime = datetime.datetime.now()
         # self.dateTime = datetime.datetime.now()
         # self.dateTime.year = dateTime.year
         # self.dateTime.month = dateTime.month

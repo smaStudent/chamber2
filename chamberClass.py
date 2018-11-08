@@ -79,7 +79,7 @@ class Chamber:
         # to jest do zmiany, bo nie dziala poprawnie
         try:
             PV, SP, lowVal, maxVal = changeAnsForTable(sendAndReceive(self.ser, self.tempAsk))
-            self.tempDataObject.dateTime = self.timeInIteration
+            # self.tempDataObject.dateTime = self.timeInIteration
             self.tempDataObject.PV = PV
             self.tempDataObject.SP = SP
             self.tempDataObject.minLv = lowVal
@@ -94,7 +94,7 @@ class Chamber:
         # to jest do zmiany, bo nie dziala poprawnie
         try:
             PV, SP, lowVal, maxVal = changeAnsForTable(sendAndReceive(self.ser, self.humiAsk))
-            self.humiDataObject.dateTime = self.timeInIteration
+            # self.humiDataObject.dateTime = self.timeInIteration
             self.humiDataObject.PV = PV
             self.humiDataObject.SP = SP
             self.humiDataObject.minLv = lowVal
