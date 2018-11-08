@@ -36,8 +36,9 @@ class Chamber:
         # self.lastString = '\r\n'    # it has to be in every single message
         self.tempDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
         self.humiDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
-
-        if self.ser.open():
+        self.ser.open()
+        
+        if self.ser.isOpen():
             print("We are connected with chamber")
         else:
             print("We couldnt connect with chamber, try again after checking it!")
