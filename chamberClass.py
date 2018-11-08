@@ -102,9 +102,11 @@ class Chamber:
             return serial.SerialException
 
     def getHumi(self):
+        print(self.humiDataObject)
         return self.humiDataObject
 
     def getTemp(self):
+        print(self.tempDataObject)
         return self.tempDataObject
 
 #############################################################################

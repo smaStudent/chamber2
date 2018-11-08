@@ -19,6 +19,7 @@ def main():
     try:
         chamber = Chamber()
         areWeWorking = True
+        print("Wykonane: chamber = Chamber()")
     except:
         while tryCount < 100 and not areWeWorking:
             try:
