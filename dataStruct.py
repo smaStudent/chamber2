@@ -1,3 +1,4 @@
+import datetime
 class dataStruct:
     def __init__(self, dateTime=None, PV=None, SP=None, min=None, max=None):
         # self.dateTime = datetime.datetime.now()
@@ -8,9 +9,8 @@ class dataStruct:
         # self.dateTime.minute = dateTime.minute
         # self.dateTime.second = dateTime.second
         # self.dateTime.microsecond = 0
-        self.dateTime = dateTime
-        if dateTime is not None:
-            self.dateTime.microsecond = 0
+        self.dateTime = datetime.datetime(dateTime.year, dateTime.month, dateTime.day, dateTime.hour, dateTime.minute, dateTime.second)
+
         self.PV = PV
         self.SP = SP
         self.minLv = min

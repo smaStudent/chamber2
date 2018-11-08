@@ -2,6 +2,7 @@
 from functions import *
 import serial
 import dataStruct
+import datetime
 
 
 class Chamber:
@@ -33,8 +34,8 @@ class Chamber:
         self.heaterAsk = '%?\r\n'
         self.condInside = 'MON?\r\n'
         # self.lastString = '\r\n'    # it has to be in every single message
-        self.tempDataObject = dataStruct.dataStruct()
-        self.humiDataObject = dataStruct.dataStruct()
+        self.tempDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
+        self.humiDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
 
 
         # try:

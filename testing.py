@@ -1,11 +1,7 @@
 
-
-
-
-
 # import dataStruct
 # import functions
-# import datetime
+import datetime
 # import time
 # import pymysql as mysql
 #
@@ -21,3 +17,11 @@
 #                               'test_database',
 #                               'chamberHumi',
 #                               dataTab)
+
+
+
+dateTime = datetime.datetime.now()
+dated = datetime.datetime(dateTime.year, dateTime.month, dateTime.day, dateTime.hour, dateTime.minute, dateTime.second)
+
+
+print(dated)
