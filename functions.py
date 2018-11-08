@@ -2,7 +2,9 @@ import time
 import serial
 import datetime
 import MySQLdb as mysql
-#import pymysql as mysql
+
+
+# import pymysql as mysql
 
 # import pymysql as mysql
 
@@ -166,13 +168,10 @@ def saveSomeDataToMySQLHumi(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
 ################################################################################################
 
 def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj):
-
-
     connection = mysql.connect(host=hostGiven,
                                user=userGiven,
                                passwd=passwdGiven,
                                db=dbGiven)
-
 
     with connection.cursor() as cursor:
         print("1.1")
@@ -182,7 +181,5 @@ def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObj)
         print("1.2")
     connection.commit()
     print("udaloSieSQL")
-
-
 
     connection.close()
