@@ -37,7 +37,7 @@ class Chamber:
         self.tempDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
         self.humiDataObject = dataStruct.dataStruct(dateTime=datetime.datetime.now())
         self.ser.open()
-        
+
         if self.ser.isOpen():
             print("We are connected with chamber")
         else:

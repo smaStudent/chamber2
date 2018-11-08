@@ -44,12 +44,16 @@ def main():
         try:
             if chamber.update():
                 tempttData = dataStruct(chamber.getTemp())
+                print("tempttData = dataStruct(chamber.getTemp()),      main")
                 humitData = dataStruct(chamber.getHumi())
+                print("humitData = dataStruct(chamber.getHumi())        main")
                 amountOfData += 1
                 tempData.append(tempttData)
+                print("tempData.append(tempttData)                      main")
                 humiData.append(humitData)
+                print("humiData.append(humitData)                       main")
         except:
-            print("Unable to update the chamber")
+            print("Unable to update the chamber, main_function")
 
         try:
             if amountOfData == 5:
