@@ -175,5 +175,6 @@ def saveSomeDataToMySQLTemp(hostGiven, userGiven, passwdGiven, dbGiven, dataObjT
             cursor.execute(
                 "INSERT INTO chamberTemp (dateTime, PV, SP, minLevel, maxLevel) VALUES (%s, %s, %s, %s, %s)",
                 (dataObj.dateTime, dataObj.PV, dataObj.SP, dataObj.minLv, dataObj.maxLv))
+            print(dataObj)
             connection.commit()
     connection.close()
